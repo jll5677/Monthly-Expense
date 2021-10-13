@@ -1,8 +1,8 @@
 const express = require('express');
-const router = express.router();
+const router = express.Router();
 
 // load expense model
-const expense = require('../../models/Expense');
+const Expense = require('../models/Expense');
 
 // @route GET api/expense/test
 // @description test expense route
