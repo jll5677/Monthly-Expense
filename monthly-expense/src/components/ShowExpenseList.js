@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import ExpenseCard from './ExpenseCard';
 
 class ShowExpenseList extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class ShowExpenseList extends Component {
     
     componentDidMount() {
         axios
-            .get('http://localhost:8082/api/expense')
+            .get('http://localhost:8082/api/expenses')
             .then(res => {
                 this.setState({
                     expenses: res.data
@@ -25,14 +26,14 @@ class ShowExpenseList extends Component {
     };
 
     render(){
-        const expense = this.state.expense;
+        const expenses = this.state.expenses;
         console.log("PrintExpense: " + expenses);
         let expenseList;
 
-        if (!expense) {
+        if (!expenses) {
             expenseList = "there are no expense recorded";
         } else {
-            expenseList = expense.map((expense, i) =>
+            expenseList = expenses.map((expense, i) =>
                 <ExpenseCard expense={expense} key={i} />
             );
         }
