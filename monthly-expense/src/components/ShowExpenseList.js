@@ -48,7 +48,7 @@ class ShowExpenseList extends Component {
                         </div>
 
                         <div className="col-mid-11">
-                            <Link to="/create-expense" className="btn btn-outline-warning float-right">
+                            <Link to="/create-expenses" className="btn btn-outline-warning float-right">
                                 + Add new Expense
                             </Link>
                             <br />

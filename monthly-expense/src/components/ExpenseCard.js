@@ -10,11 +10,11 @@ const ExpenseCard = (props) => {
             <div className="desc">
                 <h2>
                     <Link to={`/show-expense/${expense._id}`}>
-                        { expense.name }
+                        { expense.Name }
                     </Link>
                 </h2>
-                <h3>{expense.type}</h3>
-                <h3>{expense.amount}</h3>
+                <h3>{expense.Type}</h3>
+                <h3>{expense.Amount}</h3>
             </div>
         </div>
     );

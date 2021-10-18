@@ -23,10 +23,10 @@ class CreateExpense extends Component {
     e.preventDefault();
 
     const data = {
-      name: this.state.name,
+      Name: this.state.name,
       Type: this.state.type,
-      Amount: this.state.Amount,
-      date: this.state.date
+      Amount: this.state.amount,
+      Date: this.state.date
     };
 
     axios

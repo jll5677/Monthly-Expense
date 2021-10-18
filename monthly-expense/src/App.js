@@ -4,7 +4,7 @@ import './App.css';
 
 import CreateExpense from './components/CreateExpense';
 import ShowExpenseList from './components/ShowExpenseList';
-//import ShowExpenseDetails from './components/ShowExpenseDetails';
+import ShowExpenseDetails from './components/ShowExpenseDetails';
 //import UpdateExpenseInfo from './components/UpdateExpenseInfo';
 
 class App extends Component {
@@ -13,11 +13,12 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path='/' component={ShowExpenseList} />
-          <Route path='/create-expense' component={CreateExpense} />
+          <Route path='/create-expenses' component={CreateExpense} />
           {/*
-          <Route path='/edit-expense/:id' component={UpdateExpenseInfo} />
-          <Route path='/show-expense/:id' component={ShowExpenseDetails} />
+          <Route path='/edit-expenses/:id' component={UpdateExpenseInfo} />
           */}
+          <Route path='/show-expense/:id' component={ShowExpenseDetails} />
+          
         </div>
       </Router>
     );
