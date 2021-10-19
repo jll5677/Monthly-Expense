@@ -9,8 +9,8 @@ class CreateExpense extends Component {
     super();
     this.state = {
       name: '',
-      Type: '',
-      Amount: '',
+      type: '',
+      amount: '',
       date: ''
     };
   }
@@ -23,20 +23,20 @@ class CreateExpense extends Component {
     e.preventDefault();
 
     const data = {
-      Name: this.state.name,
-      Type: this.state.type,
-      Amount: this.state.amount,
-      Date: this.state.date
+      name: this.state.name,
+      type: this.state.type,
+      amount: this.state.amount,
+      date: this.state.date
     };
 
     axios
       .post('http://localhost:8082/api/expenses', data)
       .then(res => {
         this.setState({
-            name: '',
+            Name: '',
             Type: '',
             Amount: '',
-            date: ''
+            Date: ''
         })
         this.props.history.push('/');
       })
@@ -66,7 +66,7 @@ class CreateExpense extends Component {
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Name of the expense'
+                    placeholder='Name'
                     name='name'
                     className='form-control'
                     value={this.state.name}

@@ -9,7 +9,7 @@ const ExpenseCard = (props) => {
         <div className="card-container">
             <div className="desc">
                 <h2>
-                    <Link to={`/show-expense/${expense._id}`}>
+                    <Link to={`/show-expenses/${expense._id}`}>
                         { expense.Name }
                     </Link>
                 </h2>
