@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 
-class UpdateExpenseInfo extends Component {
+class updateExpenseInfo extends Component {
     constructor(props){
         super(props);
         this.state = {
-            Name: '',
-            Type: '',
-            Amount: '',
-            Date: ''
+            name: '',
+            type: '',
+            amount: '',
+            date: ''
         };
     }
 
@@ -19,10 +19,10 @@ class UpdateExpenseInfo extends Component {
             .get('http://localhost:8082/api/expenses/' + this.props.match.params.id)
             .then(res => {
                 this.setState({
-                    Name: res.data.Name,
-                    Type: res.data.Type,
-                    Amount: res.data.Amount,
-                    Date: res.data.Date
+                    name: res.data.name,
+                    type: res.data.type,
+                    amount: res.data.amount,
+                    date: res.data.date
                 })
             })
             .catch(err => {
@@ -38,10 +38,10 @@ class UpdateExpenseInfo extends Component {
         e.preventDefault();
 
         const data = {
-            Name: this.state.Name,
-            Type: this.state.Type,
-            Amount: this.state.Amount,
-            Date: this.state.Date
+            name: this.state.name,
+            type: this.state.type,
+            amount: this.state.amount,
+            date: this.state.date
         };
 
         axios
@@ -56,7 +56,7 @@ class UpdateExpenseInfo extends Component {
 
     render(){
         return(
-            <div className="UpdateExpenseInfo">
+            <div className="updateExpenseInfo">
                 <div className="container">
                     <div className="row">
                         <div className="col-mid-8 m-auto">
@@ -83,7 +83,7 @@ class UpdateExpenseInfo extends Component {
                                     placeholder='Name of the Expense'
                                     name='Name'
                                     className='form-control'
-                                    value={this.state.Name}
+                                    value={this.state.name}
                                     onChange={this.onChange}
                                 />
                             </div>
@@ -96,7 +96,7 @@ class UpdateExpenseInfo extends Component {
                                     placeholder='Type of the Expense'
                                     name='Type'
                                     className='form-control'
-                                    value={this.state.Type}
+                                    value={this.state.type}
                                     onChange={this.onChange}
                                 />
                             </div>
@@ -109,7 +109,7 @@ class UpdateExpenseInfo extends Component {
                                     placeholder='Amount of the Expense'
                                     name='Amount'
                                     className='form-control'
-                                    value={this.state.Amount}
+                                    value={this.state.amount}
                                     onChange={this.onChange}
                                 />
                             </div>
@@ -122,7 +122,7 @@ class UpdateExpenseInfo extends Component {
                                     placeholder='Date of the Expense'
                                     name='Date'
                                     className='form-control'
-                                    value={this.state.Date}
+                                    value={this.state.date}
                                     onChange={this.onChange}
                                 />
                             </div>
@@ -138,4 +138,4 @@ class UpdateExpenseInfo extends Component {
     }
 }
 
-export default UpdateExpenseInfo;
+export default updateExpenseInfo;

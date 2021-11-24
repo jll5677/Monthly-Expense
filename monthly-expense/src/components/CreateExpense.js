@@ -4,7 +4,7 @@ import '../App.css';
 import axios from 'axios';
 
 
-class CreateExpense extends Component {
+class createExpense extends Component {
   constructor() {
     super();
     this.state = {
@@ -33,10 +33,10 @@ class CreateExpense extends Component {
       .post('http://localhost:8082/api/expenses', data)
       .then(res => {
         this.setState({
-            Name: '',
-            Type: '',
-            Amount: '',
-            Date: ''
+            name: '',
+            type: '',
+            amount: '',
+            date: ''
         })
         this.props.history.push('/');
       })
@@ -47,7 +47,7 @@ class CreateExpense extends Component {
 
   render() {
     return (
-      <div className="CreateExpense">
+      <div className="createExpense">
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
@@ -121,4 +121,4 @@ class CreateExpense extends Component {
   }
 }
 
-export default CreateExpense;
+export default createExpense;

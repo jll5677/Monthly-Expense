@@ -39,35 +39,35 @@ class showExpenseDetails extends Component {
 
     render() {
         const expense = this.state.expense;
-        let ExpenseItem = <div>
+        let expenseItem = <div>
             <table className="table table-hover table-dark">
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
                         <td>Name</td>
-                        <td>{ expense.Name }</td>
+                        <td>{ expense.name }</td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
                         <td>Expense Type</td>
-                        <td>{ expense.Type }</td>
+                        <td>{ expense.type }</td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
                         <td>Amount</td>
-                        <td>{ expense.Amount }</td>
+                        <td>{ expense.amount }</td>
                     </tr>
                     <tr>
                         <th scope="row">4</th>
                         <td>Date</td>
-                        <td>{ expense.Date }</td>
+                        <td>{ expense.date }</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         return(
-            <div className="ShowExpenseDetails">
+            <div className="showExpenseDetails">
                 <div className="container">
 
                     <div className="row">
@@ -88,7 +88,7 @@ class showExpenseDetails extends Component {
                     </div>
 
                     <div>
-                        { ExpenseItem }
+                        { expenseItem }
                     </div>
 
                     <div className="row">

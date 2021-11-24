@@ -32,25 +32,25 @@
   }
 }
 
-.CreateExpense {
+.createExpense {
   background-color: #2c3e50;
   min-height: 100vh;
   color: white;
 }
 
-.ShowExpenseDetails {
+.showExpenseDetails {
   background-color: #2c3e50;
   min-height: 100vh;
   color: white;
 }
 
-.UpdateExpenseInfo {
+.updateExpenseInfo {
   background-color: #2c3e50;
   min-height: 100vh;
   color: white;
 }
 
-.ShowExpenseList {
+.showExpenseList {
   background-color: #2c3e50;
   height: 100%;
   width: 100%;

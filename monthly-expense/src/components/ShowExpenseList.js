@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import ExpenseCard from './ExpenseCard';
+import expenseCard from './ExpenseCard';
 
-class ShowExpenseList extends Component {
+class showExpenseList extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -34,7 +34,7 @@ class ShowExpenseList extends Component {
             expenseList = "there are no expense recorded";
         } else {
             expenseList = expenses.map((expense, i) =>
-                <ExpenseCard expense={expense} key={i} />
+                <expenseCard expense={expense} key={i} />
             );
         }
 
@@ -66,4 +66,4 @@ class ShowExpenseList extends Component {
     }
 }
 
-export default ShowExpenseList;
+export default showExpenseList;
