@@ -14,7 +14,7 @@ class UpdateExpenseInfo extends Component {
         };
     }
 
-    componentsDidMount(){
+    componentDidMount(){
         axios
             .get('http://localhost:8082/api/expenses/' + this.props.match.params.id)
             .then(res => {
@@ -80,8 +80,7 @@ class UpdateExpenseInfo extends Component {
                                 <label htmlFor="name">Name</label>
                                 <input
                                     type='text'
-                                    placeholder='Name of the Expense'
-                                    name='name'
+                                    name="name"
                                     className='form-control'
                                     value={this.state.name}
                                     onChange={this.onChange}
@@ -93,7 +92,6 @@ class UpdateExpenseInfo extends Component {
                                 <label htmlFor="type">Type</label>
                                 <input
                                     type='text'
-                                    placeholder='Type of the Expense'
                                     name='type'
                                     className='form-control'
                                     value={this.state.type}
@@ -106,7 +104,6 @@ class UpdateExpenseInfo extends Component {
                                 <label htmlFor="amount">Amount</label>
                                 <input
                                     type='number'
-                                    placeholder='Amount of the Expense'
                                     name='amount'
                                     className='form-control'
                                     value={this.state.amount}
@@ -116,10 +113,9 @@ class UpdateExpenseInfo extends Component {
                             <br />
 
                             <div className='form-group'>
-                                <label htmlFor="date">Date</label>
+                                <label>Date</label>
                                 <input
                                     type='date'
-                                    placeholder='Date of the Expense'
                                     name='date'
                                     className='form-control'
                                     value={this.state.date}

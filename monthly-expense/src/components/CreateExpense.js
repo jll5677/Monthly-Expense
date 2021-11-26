@@ -71,6 +71,7 @@ class CreateExpense extends Component {
                     className='form-control'
                     value={this.state.name}
                     onChange={this.onChange}
+                    ref={this.state.name}
                   />
                 </div>
                 <br />
