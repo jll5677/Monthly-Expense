@@ -15,6 +15,7 @@ const expenseSchema = new mongoose.Schema({
     },
     date: {
         type: Date,
+        default:date,
         require: true
     },
     updated_date: {

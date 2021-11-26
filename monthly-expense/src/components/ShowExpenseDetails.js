@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
+import moment from 'moment';
 
 class ShowExpenseDetails extends Component {
     constructor(props){
@@ -60,7 +61,7 @@ class ShowExpenseDetails extends Component {
                     <tr>
                         <th scope="row">4</th>
                         <td>Date</td>
-                        <td>{ expense.date }</td>
+                        <td>{ moment(expense.date).format("yyyy-MM-DD") }</td>
                     </tr>
                 </tbody>
             </table>

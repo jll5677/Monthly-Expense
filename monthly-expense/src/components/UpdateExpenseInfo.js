@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
+import moment from 'moment';
 
 class UpdateExpenseInfo extends Component {
     constructor(props){
@@ -22,8 +23,9 @@ class UpdateExpenseInfo extends Component {
                     name: res.data.name,
                     type: res.data.type,
                     amount: res.data.amount,
-                    date: res.data.date
+                    date: moment(res.data.date).format('yyyy-MM-DD')
                 })
+                console.log(this.state.date);
             })
             .catch(err => {
                 console.log("Error from UpdateExpenseInfo");
@@ -37,12 +39,15 @@ class UpdateExpenseInfo extends Component {
     onSubmit = e => {
         e.preventDefault();
 
+
         const data = {
             name: this.state.name,
             type: this.state.type,
             amount: this.state.amount,
-            date: this.state.date
+            date: moment(this.state.date).add(1,"d").format('yyyy-MM-DD')
         };
+
+        console.log(data.name);
 
         axios
             .put('http://localhost:8082/api/expenses/' + this.props.match.params.id, data)
