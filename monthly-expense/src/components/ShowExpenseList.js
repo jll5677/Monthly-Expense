@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import expenseCard from './ExpenseCard';
+import ExpenseCard from './ExpenseCard';
 
-class showExpenseList extends Component {
+class ShowExpenseList extends Component {
     constructor(props) {
         super(props);
         this.state = {
             expense: []
-        }
-    };
+        };
+    }
     
     componentDidMount() {
         axios
@@ -34,7 +34,7 @@ class showExpenseList extends Component {
             expenseList = "there are no expense recorded";
         } else {
             expenseList = expenses.map((expense, i) =>
-                <expenseCard expense={expense} key={i} />
+                <ExpenseCard expense={expense} key={i} />
             );
         }
 
@@ -48,7 +48,7 @@ class showExpenseList extends Component {
                         </div>
 
                         <div className="col-mid-11">
-                            <Link to="/create-expenses" className="btn btn-outline-warning float-right">
+                            <Link to="/create-expense" className="btn btn-outline-warning float-right">
                                 + Add new Expense
                             </Link>
                             <br />
@@ -66,4 +66,4 @@ class showExpenseList extends Component {
     }
 }
 
-export default showExpenseList;
+export default ShowExpenseList;

@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
-const expenseCard = (props) => {
+const ExpenseCard = (props) => {
     const expense = props.expense;
 
     return(
         <div className="card-container">
             <div className="desc">
                 <h2>
-                    <Link to={`/show-expenses/${expense._id}`}>
+                    <Link to={`/show-expense/${expense._id}`}>
                         { expense.name }
                     </Link>
                 </h2>
@@ -20,4 +20,4 @@ const expenseCard = (props) => {
     );
 }
 
-export default expenseCard;
+export default ExpenseCard;

@@ -4,7 +4,7 @@ import '../App.css';
 import axios from 'axios';
 
 
-class createExpense extends Component {
+class CreateExpense extends Component {
   constructor() {
     super();
     this.state = {
@@ -121,4 +121,4 @@ class createExpense extends Component {
   }
 }
 
-export default createExpense;
+export default CreateExpense;

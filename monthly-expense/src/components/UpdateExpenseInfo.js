@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 
-class updateExpenseInfo extends Component {
+class UpdateExpenseInfo extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -47,7 +47,7 @@ class updateExpenseInfo extends Component {
         axios
             .put('http://localhost:8082/api/expenses/' + this.props.match.params.id, data)
             .then(res => {
-                this.props.history.push('/show-expenses/' + this.props.match.params.id);
+                this.props.history.push('/show-expense/' + this.props.match.params.id);
             })
             .catch(err => {
                 console.log("Error in UpdateExpenseInfo!");
@@ -74,14 +74,14 @@ class updateExpenseInfo extends Component {
                         </div>
                     </div>
 
-                    <div className="col-mid-8 m-auto">
+                    <div className="col-mid-8 m-auto" >
                         <form noValidate onSubmit={this.onSubmit}>
                             <div className='form-group'>
-                                <label htmlFor="Name">Name</label>
+                                <label htmlFor="name">Name</label>
                                 <input
                                     type='text'
                                     placeholder='Name of the Expense'
-                                    name='Name'
+                                    name='name'
                                     className='form-control'
                                     value={this.state.name}
                                     onChange={this.onChange}
@@ -90,11 +90,11 @@ class updateExpenseInfo extends Component {
                             <br />
 
                             <div className='form-group'>
-                                <label htmlFor="Type">Type</label>
+                                <label htmlFor="type">Type</label>
                                 <input
                                     type='text'
                                     placeholder='Type of the Expense'
-                                    name='Type'
+                                    name='type'
                                     className='form-control'
                                     value={this.state.type}
                                     onChange={this.onChange}
@@ -103,11 +103,11 @@ class updateExpenseInfo extends Component {
                             <br />
 
                             <div className='form-group'>
-                                <label htmlFor="Amount">Amount</label>
+                                <label htmlFor="amount">Amount</label>
                                 <input
                                     type='number'
                                     placeholder='Amount of the Expense'
-                                    name='Amount'
+                                    name='amount'
                                     className='form-control'
                                     value={this.state.amount}
                                     onChange={this.onChange}
@@ -116,11 +116,11 @@ class updateExpenseInfo extends Component {
                             <br />
 
                             <div className='form-group'>
-                                <label htmlFor="Date">Date</label>
+                                <label htmlFor="date">Date</label>
                                 <input
                                     type='date'
                                     placeholder='Date of the Expense'
-                                    name='Date'
+                                    name='date'
                                     className='form-control'
                                     value={this.state.date}
                                     onChange={this.onChange}
@@ -138,4 +138,4 @@ class updateExpenseInfo extends Component {
     }
 }
 
-export default updateExpenseInfo;
+export default UpdateExpenseInfo;

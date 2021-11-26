@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
-class showExpenseDetails extends Component {
+class ShowExpenseDetails extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -100,7 +100,7 @@ class showExpenseDetails extends Component {
                         </div>
 
                         <div className="col-mid-6">
-                            <Link to={`/edit-expenses/${expense._id}`} className="btn btn-outline-info btn-lg btn-block">
+                            <Link to={`/edit-expense/${expense._id}`} className="btn btn-outline-info btn-lg btn-block">
                                 Edit Expense
                             </Link>
                             <br />
@@ -113,4 +113,4 @@ class showExpenseDetails extends Component {
     }
 }
 
-export default showExpenseDetails;
+export default ShowExpenseDetails;
