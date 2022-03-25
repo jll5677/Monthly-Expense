@@ -96,3 +96,8 @@
   font-size: 1em;
   padding: 10px 0 10px 0;
 }
+
+.navMargin {
+  padding-top: 30px;
+  margin-bottom: 30px;
+}

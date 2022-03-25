@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
+import * as utility from '../utility/utility.js';
 
 
 class CreateExpense extends Component {
@@ -11,7 +12,7 @@ class CreateExpense extends Component {
       name: '',
       type: '',
       amount: '',
-      date: ''
+      date: utility.getDate()
     };
   }
 
@@ -104,7 +105,7 @@ class CreateExpense extends Component {
                     placeholder='date'
                     name='date'
                     className='form-control'
-                    value={this.state.date}
+                    value= {this.state.date}
                     onChange={this.onChange}
                   />
                 </div>

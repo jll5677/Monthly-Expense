@@ -4,6 +4,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ExpenseCard from './ExpenseCard';
 
+import {Container, Col, Row, Button, Stack, Form} from 'react-bootstrap';
+
+
 class ShowExpenseList extends Component {
     constructor(props) {
         super(props);
@@ -39,28 +42,26 @@ class ShowExpenseList extends Component {
         }
 
         return (
-            <div className="showExpenseList">
-                <div className="containter">
-                    <div className="row">
-                        <div className="col-mid-12">
-                            <br />
-                            <h2 className="display-4 text-color">Expense List</h2>
-                        </div>
+            // @TODO: Fix landing page
+            <div className="showExpenseList"> 
+                <Container>
+                    <Row className="navMargin">
+                        <Col xs={8} md={8}>
+                                <h2 style={{float: 'left'}}>Expense List</h2>
+                        </Col>
 
-                        <div className="col-mid-11">
-                            <Link to="/create-expense" className="btn btn-outline-warning float-right">
-                                + Add new Expense
-                            </Link>
-                            <br />
-                            <br />
-                            <br />
-                        </div>
-                    </div>
+                        <Col xs={4} md={4}>
+                            <Link to="/create-expense" style={{float: 'right'}}>
+                                <Button variant="primary">+ Add new Expense</Button>
+                            </Link>   
+                        </Col>
 
-                    <div className="list">
+                    </Row>
+
+                    <Row>
                         {expenseList}
-                    </div>
-                </div>
+                    </Row>
+                </Container>
             </div>
         );
     }
