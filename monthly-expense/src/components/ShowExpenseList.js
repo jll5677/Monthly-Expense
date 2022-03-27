@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ExpenseCard from './ExpenseCard';
 
-import {Container, Col, Row, Button, Stack, Form} from 'react-bootstrap';
+import {Container, Col, Row, Button} from 'react-bootstrap';
 
 
 class ShowExpenseList extends Component {
@@ -44,15 +44,15 @@ class ShowExpenseList extends Component {
         return (
             // @TODO: Fix landing page
             <div className="showExpenseList"> 
-                <Container>
+                <Container className="showExpenseList">
                     <Row className="navMargin">
                         <Col xs={8} md={8}>
-                                <h2 style={{float: 'left'}}>Expense List</h2>
+                                <h2 style={{float: 'left'}} className="display-4 text-center">Expense List</h2>
                         </Col>
 
                         <Col xs={4} md={4}>
-                            <Link to="/create-expense" style={{float: 'right'}}>
-                                <Button variant="primary">+ Add new Expense</Button>
+                            <Link to="/create-expense" style={{float: 'right'}} className="display-4 text-center">
+                                <Button variant="primary">+ New Expense</Button>
                             </Link>   
                         </Col>
 
