@@ -101,3 +101,15 @@
   padding-top: 30px;
   margin-bottom: 30px;
 }
+
+.rowMargin {
+  margin-bottom: 15px;
+}
+
+.buttonPadding {
+  margin-top: 15px
+}
+
+.tableText {
+  text-align:center
+}

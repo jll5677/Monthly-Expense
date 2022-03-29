@@ -63,46 +63,51 @@ class CreateExpense extends Component {
                       <Button variant="warning">Show Expense List</Button>
                   </Link>   
               </Col>
-
           </Row>
-          <Form  noValidate onSubmit={this.onSubmit}>
-            <Form.Group className="md-8">
+          <Form onSubmit={this.onSubmit}>
+            <Form.Group className="md-8 rowMargin">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
                 name="name"
                 value={this.state.name}
                 onChange={this.onChange}
+                required
               />
             </Form.Group>
-            <Form.Group className="md-8">
+            <Form.Group className="md-8 rowMargin">
               <Form.Label>Type</Form.Label>
               <Form.Control
                 type="text"
                 name="type"
                 value={this.state.type}
                 onChange={this.onChange}
+                required
               />
             </Form.Group>
-            <Form.Group className="md-8">
+            <Form.Group className="md-8 rowMargin">
               <Form.Label>Amount</Form.Label>
               <Form.Control
                 type="number"
                 name="amount"
                 value={this.state.amount}
                 onChange={this.onChange}
+                required
               />
             </Form.Group>
-            <Form.Group className="md-8">
+            <Form.Group className="md-8 rowMargin">
               <Form.Label>Date</Form.Label>
               <Form.Control
                 type="date"
                 name="date"
                 value={this.state.date}
                 onChange={this.onChange}
+                required
               />
             </Form.Group>
-            <Button variant="warning" type="submit">Submit</Button>
+            <Form.Group className="text-center">
+              <Button variant="warning" type="submit" className="buttonPadding">Submit</Button>
+            </Form.Group>
           </Form>
         </Container>
       </div>

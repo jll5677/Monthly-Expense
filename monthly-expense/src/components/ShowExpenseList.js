@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ExpenseCard from './ExpenseCard';
 
-import {Container, Col, Row, Button} from 'react-bootstrap';
+import {Container, Col, Row, Button, Stack} from 'react-bootstrap';
 
 
 class ShowExpenseList extends Component {
@@ -58,9 +58,13 @@ class ShowExpenseList extends Component {
 
                     </Row>
 
-                    <Row>
-                        {expenseList}
-                    </Row>
+
+                    <Stack gap={10}>
+                        <Row>
+                            {expenseList}
+                        </Row>
+                    </Stack>
+                    
                 </Container>
             </div>
         );
