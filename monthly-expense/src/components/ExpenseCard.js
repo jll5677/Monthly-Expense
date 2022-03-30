@@ -7,15 +7,17 @@ const ExpenseCard = (props) => {
 
     return(
         <div className="card-container">
-            <div className="desc">
-                <h2>
-                    <Link to={`/show-expense/${expense._id}`}>
+            <Link to={`/show-expense/${expense._id}`}>
+                <div className="desc">
+                    <h2>
+                        
                         { expense.name }
-                    </Link>
-                </h2>
-                <h3>{expense.type}</h3>
-                <h3>{expense.amount}</h3>
-            </div>
+                        
+                    </h2>
+                    <h3>{expense.type}</h3>
+                    <h3>{expense.amount}</h3>
+                </div>
+            </Link>
         </div>
     );
 }

@@ -107,9 +107,12 @@
 }
 
 .buttonPadding {
-  margin-top: 15px
+  margin-top: 15px;
+  min-width: 150px;
+  max-width: 150px;
 }
 
 .tableText {
   text-align:center
 }
+

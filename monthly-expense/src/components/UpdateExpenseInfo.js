@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
-import moment from 'moment';
+import * as utility from '../utility/utility.js';
+import {Container, Col, Row, Button} from 'react-bootstrap';
 
 class UpdateExpenseInfo extends Component {
     constructor(props){
@@ -23,9 +24,9 @@ class UpdateExpenseInfo extends Component {
                     name: res.data.name,
                     type: res.data.type,
                     amount: res.data.amount,
-                    date: moment(res.data.date).format('yyyy-MM-DD')
+                    date: utility.getDate(res.data.date)
                 })
-                console.log(this.state.date);
+                console.log(isNaN(this.state.date))
             })
             .catch(err => {
                 console.log("Error from UpdateExpenseInfo");
@@ -44,10 +45,10 @@ class UpdateExpenseInfo extends Component {
             name: this.state.name,
             type: this.state.type,
             amount: this.state.amount,
-            date: moment(this.state.date).add(1,"d").format('yyyy-MM-DD')
+            date: this.state.date
         };
 
-        console.log(data.name);
+        console.log("date on submit" + data.date);
 
         axios
             .put('http://localhost:8082/api/expenses/' + this.props.match.params.id, data)
@@ -129,7 +130,6 @@ class UpdateExpenseInfo extends Component {
                             </div>
 
                             <button type="submit" className="btn btn-outline-info btn-lg btn-block">Update Expense</button>
-
                         </form>
                     </div>
 

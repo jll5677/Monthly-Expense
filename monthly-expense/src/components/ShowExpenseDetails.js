@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 import * as utility from '../utility/utility.js';
-import {Container, Col, Row, Button, Stack, Form} from 'react-bootstrap';
+import {Container, Col, Row, Button} from 'react-bootstrap';
 
 class ShowExpenseDetails extends Component {
     constructor(props){
@@ -43,7 +43,7 @@ class ShowExpenseDetails extends Component {
         const expense = this.state.expense;
         let expenseItem = <div>
             <table className="table table-hover table-dark">
-                <tbody>
+                <tbody className="tableText">
                     <tr>
                         <th scope="row">1</th>
                         <td>Name:</td>
@@ -89,11 +89,14 @@ class ShowExpenseDetails extends Component {
 
                     <Row>
                         <Col className="text-center">
-                            <Button variant="outline-warning" className="buttonPadding">Edit Expense</Button>
+                            <Link to={`/edit-expense/${expense._id}`}>
+                                <Button variant="outline-warning" className="buttonPadding">Edit Expense</Button>
+                            </Link>
+                            
                         </Col>
 
                         <Col className="text-center">
-                            <Button variant="danger" className="buttonPadding">Delete Expense</Button>
+                            <Button variant="danger" className="buttonPadding" onClick={this.onDeleteClick.bind(this,expense._id)}>Delete Expense</Button>
                         </Col>
                     </Row>
                 </Container>

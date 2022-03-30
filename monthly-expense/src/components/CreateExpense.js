@@ -13,20 +13,20 @@ class CreateExpense extends Component {
       name: '',
       type: '',
       amount: '',
-      date: utility.getDate()
+      date: utility.todaysDate()
     };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onChange(event) {
-    this.setState({[event.target.name]: event.target.value});
+  onChange = e => {
+    this.setState({[e.target.name]: e.target.value});
   }
 
-  onSubmit(event) {
+  onSubmit = e => {
     //preventing default method from happening, this way we can have our own custom change
-    event.preventDefault();
+    e.preventDefault();
     
     //packaging the object data into this variable to be sent
     const data = {
