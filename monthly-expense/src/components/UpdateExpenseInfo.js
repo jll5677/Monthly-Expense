@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 import * as utility from '../utility/utility.js';
-import {Container, Col, Row, Button} from 'react-bootstrap';
+import {Container, Col, Row, Button, Form} from 'react-bootstrap';
 
 class UpdateExpenseInfo extends Component {
     constructor(props){
@@ -26,7 +26,6 @@ class UpdateExpenseInfo extends Component {
                     amount: res.data.amount,
                     date: utility.getDate(res.data.date)
                 })
-                console.log(isNaN(this.state.date))
             })
             .catch(err => {
                 console.log("Error from UpdateExpenseInfo");
@@ -40,15 +39,12 @@ class UpdateExpenseInfo extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-
         const data = {
             name: this.state.name,
             type: this.state.type,
             amount: this.state.amount,
             date: this.state.date
         };
-
-        console.log("date on submit" + data.date);
 
         axios
             .put('http://localhost:8082/api/expenses/' + this.props.match.params.id, data)
@@ -63,77 +59,64 @@ class UpdateExpenseInfo extends Component {
     render(){
         return(
             <div className="updateExpenseInfo">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-mid-8 m-auto">
-                            <br />
-                            <Link to="/" className="btn btn-outline-warning float-left">
-                                Show Expense List
-                            </Link>
-                        </div>
+                <Container>
+                    <Row className="navMargin">
+                        <Col xs={8} md={8}>
+                                <h2 style={{float: 'left'}} className="display-4 text-center">Update Expense</h2>
+                        </Col>
 
-                        <div className="col-mid-8 m-auto">
-                            <h1 className="display-4 test-center">Edit Expense</h1>
-                            <p className="lead text-center">
-                                Updated Expense's Info
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="col-mid-8 m-auto" >
-                        <form noValidate onSubmit={this.onSubmit}>
-                            <div className='form-group'>
-                                <label htmlFor="name">Name</label>
-                                <input
-                                    type='text'
-                                    name="name"
-                                    className='form-control'
-                                    value={this.state.name}
-                                    onChange={this.onChange}
-                                />
-                            </div>
-                            <br />
-
-                            <div className='form-group'>
-                                <label htmlFor="type">Type</label>
-                                <input
-                                    type='text'
-                                    name='type'
-                                    className='form-control'
-                                    value={this.state.type}
-                                    onChange={this.onChange}
-                                />
-                            </div>
-                            <br />
-
-                            <div className='form-group'>
-                                <label htmlFor="amount">Amount</label>
-                                <input
-                                    type='number'
-                                    name='amount'
-                                    className='form-control'
-                                    value={this.state.amount}
-                                    onChange={this.onChange}
-                                />
-                            </div>
-                            <br />
-
-                            <div className='form-group'>
-                                <label>Date</label>
-                                <input
-                                    type='date'
-                                    name='date'
-                                    className='form-control'
-                                    value={this.state.date}
-                                    onChange={this.onChange}
-                                />
-                            </div>
-
-                            <button type="submit" className="btn btn-outline-info btn-lg btn-block">Update Expense</button>
-                        </form>
-                    </div>
-
-                </div>
+                        <Col xs={4} md={4}>
+                            <Link to="/" style={{float: 'right'}} className="display-4 text-center">
+                                <Button variant="warning">Show Expense List</Button>
+                            </Link>   
+                        </Col>
+                    </Row>
+                    <Form onSubmit={this.onSubmit}>
+                        <Form.Group className="md-8 rowMargin">
+                        <Form.Label>Name</Form.Label>
+                        <Form.Control
+                            type="text"
+                            name="name"
+                            value={this.state.name}
+                            onChange={this.onChange}
+                            required
+                        />
+                        </Form.Group>
+                        <Form.Group className="md-8 rowMargin">
+                        <Form.Label>Type</Form.Label>
+                        <Form.Control
+                            type="text"
+                            name="type"
+                            value={this.state.type}
+                            onChange={this.onChange}
+                            required
+                        />
+                        </Form.Group>
+                        <Form.Group className="md-8 rowMargin">
+                        <Form.Label>Amount</Form.Label>
+                        <Form.Control
+                            type="number"
+                            name="amount"
+                            value={this.state.amount}
+                            onChange={this.onChange}
+                            required
+                        />
+                        </Form.Group>
+                        <Form.Group className="md-8 rowMargin">
+                        <Form.Label>Date</Form.Label>
+                        <Form.Control
+                            type="date"
+                            name="date"
+                            value={this.state.date}
+                            onChange={this.onChange}
+                            required
+                        />
+                        </Form.Group>
+                        <Form.Group className="text-center">
+                        <Button variant="outline-warning" type="submit" className="buttonPadding">Update Expense</Button>
+                        </Form.Group>
+                    </Form>
+                </Container>
             </div>
         );
     }

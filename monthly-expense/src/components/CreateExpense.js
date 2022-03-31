@@ -13,7 +13,7 @@ class CreateExpense extends Component {
       name: '',
       type: '',
       amount: '',
-      date: utility.todaysDate()
+      date: utility.getDate()
     };
 
     this.onChange = this.onChange.bind(this);
@@ -106,7 +106,7 @@ class CreateExpense extends Component {
               />
             </Form.Group>
             <Form.Group className="text-center">
-              <Button variant="warning" type="submit" className="buttonPadding">Submit</Button>
+              <Button variant="primary" type="submit" className="buttonPadding">Submit</Button>
             </Form.Group>
           </Form>
         </Container>

@@ -1,3 +1,5 @@
+import getDate as utility from '../utility/utility.js';
+
 const mongoose = require('mongoose');
 
 const expenseSchema = new mongoose.Schema({

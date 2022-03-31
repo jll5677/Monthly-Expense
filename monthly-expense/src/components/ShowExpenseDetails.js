@@ -62,7 +62,7 @@ class ShowExpenseDetails extends Component {
                     <tr>
                         <th scope="row">4</th>
                         <td>Date:</td>
-                        <td>{ utility.getDate(expense.date) }</td>
+                        <td>{ utility.getConvertedDate(expense.date) }</td>
                     </tr>
                 </tbody>
             </table>
