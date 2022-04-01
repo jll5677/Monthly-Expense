@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import ExpenseCard from './ExpenseCard';
+import ExpenseList from './ExpenseList';
 
-import {Container, Col, Row, Button, Stack} from 'react-bootstrap';
+import {Container, Col, Row, Button, Table} from 'react-bootstrap';
 
 
 class ShowExpenseList extends Component {
@@ -37,7 +37,7 @@ class ShowExpenseList extends Component {
             expenseList = "there are no expense recorded";
         } else {
             expenseList = expenses.map((expense, i) =>
-                <ExpenseCard expense={expense} key={i} />
+                <ExpenseList expense={expense} key={i} />
             );
         }
 
@@ -58,13 +58,20 @@ class ShowExpenseList extends Component {
 
                     </Row>
 
-
-                    <Stack gap={10}>
-                        <Row>
+                    <Table striped boarder hover>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             {expenseList}
-                        </Row>
-                    </Stack>
-                    
+                        </tbody>
+                    </Table>
+
                 </Container>
             </div>
         );
